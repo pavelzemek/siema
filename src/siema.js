@@ -418,7 +418,26 @@ export default class Siema {
 
     this.selectorWidth = this.selector.offsetWidth;
 
-    this.buildSliderFrame();
+    this.resizeFrame();
+  }
+
+  /**
+   * Resize the current frame after window dimensions have changed
+   */
+  resizeFrame() {
+    this.disableTransition();
+
+    const widthItem = this.selectorWidth / this.perPage;
+    const itemsToBuild = this.config.loop ? this.innerElements.length + (2 * this.perPage) : this.innerElements.length;
+
+    // apply styling to the current frame
+    this.sliderFrame.style.width = `${widthItem * itemsToBuild}px`;
+
+    this.slideToCurrent();
+
+    requestAnimationFrame(() => {
+      this.enableTransition();
+    });
   }
 
 

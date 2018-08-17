@@ -4,6 +4,12 @@ Full docs with examples: [https://pawelgrzybek.com/siema/](https://pawelgrzybek.
 
 Siema is a lightweight (only 3kb gzipped) carousel plugin with no dependencies and no styling. As Brad Frost once said "do that shit yourself". It is 100% open source and [available on Github](https://github.com/pawelgrzybek/siema). It is free to use on personal and commercial projects. Use it with your favourite module bundler or by manually injecting the script into your project.
 
+## Updates in this fork
+
+In the original implementation of Siema when browser window is resized Siema recreates all of its DOM elements.
+
+This fork keeps DOM elements and only applies calculated styles to elements when window is resized.
+
 ## Installation
 
 Setup is trivially easy. A little bit of markup...
